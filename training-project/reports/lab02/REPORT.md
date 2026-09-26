@@ -4,7 +4,7 @@
 
 ## Ідентифікація подання
 
-- URL форку: https://github.com/PolinaLavrinenko/ai-systems-design-course
+- URL форку: https://github.com/Apolinaria1705/ai-systems-design-course
 - Назва особистої гілки: lab02/kn1223b-lavrinenko
 - Повний хеш коміту зі свідченнями: 1b7cffae71352f25560156f2b12058be552def34
 
