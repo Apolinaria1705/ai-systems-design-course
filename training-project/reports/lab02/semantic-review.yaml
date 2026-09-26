@@ -1,0 +1,13 @@
+﻿schema_version: "1.0"
+review_id: lab02-structured-output-review
+proposal_id: lab02-structured-output-live-primary-01
+proposal_sha256: "50b72dd41ba774079c08373234269f69a48087f1a19553fc61a757fe5673dbd6"
+validation_id: lab02-structured-output-live-primary-01-validation
+validation_sha256: "d3d8ace19b191081e5c38bd43adfadcab0e4f22ff69d27c61c9cb265644394ba"
+findings:
+  definition: "Визначення повністю відповідає тексту джерела: Structured Output визначається як машинно-зчитуваний вивід моделі, організований за явною схемою."
+  control_gates: "Усі три точні цитати відповідають типам claim_kind (definition, syntax-vs-semantics, authority-boundary). Кандидат чітко розмежовує синтаксичний шлюз, шлюз детермінованих інваріантів і шлюз семантичного прийняття, не надаючи першим двом семантичних повноважень."
+  authority_boundary: "Кандидат суворо зберігає межу повноважень: модель лише висуває пропозицію-кандидата, людина-рецензент приймає рішення, а окрема операція застосування фіксує канонічний стан."
+rationale: "Кандидат не містить галюцинацій чи непідтримуваних тверджень. Ключові пункти та теги безпосередньо служать навчальній меті концепту та не містять специфічних метаданих постачальника чи оточення. Пропозиція є повністю прийнятною для перенесення в базу знань."
+verdict: acceptable
+reviewed_by: "kn1223b-lavrinenko"

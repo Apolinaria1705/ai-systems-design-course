@@ -1,0 +1,37 @@
+{
+  "concept_id": "structured-output",
+  "definition": "Model output intended to follow an explicit machine-readable organization, such as a JSON object with named fields.",
+  "key_points": [
+    "A team can improve structural conformance through methods like explicit format instructions, examples, post-processing, retries, constrained sampling, or model adaptation.",
+    "A model-backed operation requires three distinct gates: syntactic, deterministic invariant, and semantic acceptance.",
+    "The model emits a candidate proposal, and an authorized human reviewer is accountable for examining the meaning and evidence to record an explicit decision."
+  ],
+  "schema_version": "1.0",
+  "source_support": [
+    {
+      "claim": "Structured output is model output meant to follow a machine-readable format.",
+      "claim_kind": "definition",
+      "quote": "**Structured output** is model output intended to follow an explicit machine-readable organization, such as a JSON object with named fields."
+    },
+    {
+      "claim": "Validating the syntax or structure of an output does not guarantee its semantic accuracy.",
+      "claim_kind": "syntax-vs-semantics",
+      "quote": "A schema can prove that a `definition` field exists; it cannot prove that the definition accurately represents the source."
+    },
+    {
+      "claim": "A human reviewer is responsible for evaluating the meaning and approving a candidate proposal.",
+      "claim_kind": "authority-boundary",
+      "quote": "An **authorized human reviewer** is the person accountable for examining the meaning and evidence and recording an explicit decision."
+    }
+  ],
+  "tags": [
+    "structured-output",
+    "syntax",
+    "semantics",
+    "validation",
+    "human-reviewer"
+  ],
+  "title": "Structured Output",
+  "toolAction": "Creating JSON response",
+  "toolSummary": "Create JSON response"
+}

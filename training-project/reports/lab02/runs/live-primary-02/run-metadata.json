@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "run_id": "live-primary-02",
+  "evidence_kind": "live",
+  "adapter": "agy",
+  "model_id": "gemini-3.1-pro-low",
+  "request_id": "lab02-structured-output-v1",
+  "request_sha256": "950c97a1147c439e4d0ce0ed7f2b29352add66b52feda2f7281aa74c3d47c27b",
+  "raw_response_sha256": "c173b836de02f46b6ff2f03be9ecc681fc38750b6c5b88f6ad8d5058b50c33c3",
+  "recorded_at": "2026-09-26T10:34:41.052125+00:00",
+  "recorded_by": "kn1223b-lavrinenko",
+  "attribution_limit": "Declared run metadata is not cryptographic proof of external inference."
+}
