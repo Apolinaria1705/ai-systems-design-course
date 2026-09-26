@@ -74,6 +74,10 @@ def _require(condition: bool, message: str) -> None:
         raise WorkflowError(message)
 
 
+def _normalize_newlines(text: str) -> str:
+    return text.replace("\r\n", "\n").replace("\r", "\n")
+
+
 def _extract_source_fragment(theory_text: str) -> str:
     lines = theory_text.splitlines(keepends=True)
     try:
@@ -198,7 +202,7 @@ def register_source(
     except (OSError, UnicodeDecodeError, ValueError) as exc:
         raise WorkflowError(f"Theory source cannot be read from the course repository: {exc}") from exc
 
-    fragment = _extract_source_fragment(theory_text)
+    fragment = _extract_source_fragment(_normalize_newlines(theory_text))
     fragment_sha256 = _sha256_bytes(fragment.encode("utf-8"))
     metadata = {
         "schema_version": "1.0",
@@ -238,7 +242,7 @@ def register_source(
             "The immutable Laboratory 02 source record already exists with different content."
         )
     source_path.parent.mkdir(parents=True, exist_ok=True)
-    source_path.write_text(rendered, encoding="utf-8")
+    source_path.write_bytes(rendered.encode("utf-8"))
     return source_path
 
 
@@ -1457,11 +1461,21 @@ def verify_lab02(
             "06-final-result.png",
         )
         report_text = (report_dir / "REPORT.md").read_text(encoding="utf-8")
+        _require(
+            "data:image/" not in report_text,
+            "Source REPORT.md must keep relative image links instead of embedded data URIs.",
+        )
         for name in names:
             screenshot = report_dir / "screenshots" / name
             _require(screenshot.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"), f"{name} is not PNG.")
-            _require(name in report_text, f"REPORT.md does not reference {name}.")
-        return "REPORT.md references all six required PNG screenshots"
+            relative_link = re.compile(
+                rf"!\[[^\]\r\n]*\]\(screenshots/{re.escape(name)}\)"
+            )
+            _require(
+                relative_link.search(report_text) is not None,
+                f"REPORT.md must reference {name} with a relative Markdown image link.",
+            )
+        return "REPORT.md uses relative Markdown image links for all six required PNG screenshots"
 
     check("submission-files", verify_submission_files)
 
