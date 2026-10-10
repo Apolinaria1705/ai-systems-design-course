@@ -1,0 +1,9 @@
+{
+  "position_id": "pos-criterion-metric-chain-rubric-absent-a-2",
+  "adapter": "openrouter",
+  "model_id": "openrouter/free",
+  "started_at": "2026-10-10T13:17:45.696303+00:00",
+  "finished_at": "2026-10-10T13:17:50.043663+00:00",
+  "recorded_by": "kn1223b-lavrinenko",
+  "observed_model": "apodex/apodex-1.1-mini:free"
+}

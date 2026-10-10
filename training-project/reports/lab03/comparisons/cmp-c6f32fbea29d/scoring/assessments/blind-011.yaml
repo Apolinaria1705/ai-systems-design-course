@@ -1,0 +1,8 @@
+schema_version: '1.0'
+blind_id: blind-011
+category: S
+source_pointer: The note records two checked values for the same run and does not say which one the bound
+  applies to.
+rationale: Accurately reports that the note does not specify which checked value the bound applies to.
+assessed_by: kn1223b-lavrinenko
+recorded_at: '2026-10-10T13:28:15.011496+00:00'

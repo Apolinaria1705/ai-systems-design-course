@@ -1,0 +1,8 @@
+changed_property: raw JSON output constraint
+mechanism: explicitly forbidding non-JSON preamble and markdown wrapping ensures the model response directly
+  parses as a single valid JSON object under the output contract
+declared_factors:
+- raw JSON output constraint
+variant_a_sha256: d765770175309f6014f3af33d845b730aa0d7323fccd57403e8146be4dc352ee
+variant_b_sha256: ab6bcded50151783c00764ab43cc1c17f3a5bf4bdb425b62509ecc1dcb47a4ed
+recorded_at: '2026-10-10T12:50:49.234003+00:00'

@@ -1,0 +1,9 @@
+{
+  "position_id": "pos-dev-approval-authority-absent-a-1",
+  "adapter": "openrouter",
+  "model_id": "openrouter/free",
+  "started_at": "2026-10-10T12:45:31.200626+00:00",
+  "finished_at": "2026-10-10T12:45:34.171634+00:00",
+  "recorded_by": "kn1223b-lavrinenko",
+  "observed_model": "nvidia/nemotron-3.5-content-safety:free"
+}

@@ -1,0 +1,3 @@
+
+
+{"case_id": "criterion-metric-chain-plain", "proposed_text": "In evaluation design, a criterion states the specific quality property that the system must satisfy, serving as the standard for what constitutes success. A metric is related to the criterion as a defined measurement whose values can be compared against the criterion to judge whether that property holds, effectively translating the qualitative requirement into quantifiable evidence."}

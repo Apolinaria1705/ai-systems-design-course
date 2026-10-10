@@ -1,0 +1,17 @@
+﻿schema_version: '1.0'
+packet_id: calibration-a
+labels:
+- output_id: cal-a-1
+  category: S
+  rationale: The proposed text accurately defines the source baseline, fully preserving the relationship between the baseline material and proposal review as stated in the supplied source.
+- output_id: cal-a-2
+  category: I
+  rationale: The proposed text omits the critical relationship to proposal review, providing an incomplete definition that fails to cover the key meaning specified in the supplied source.
+- output_id: cal-a-3
+  category: U
+  rationale: The proposal includes an ungrounded claim asserting automatic approval of later changes, which is unsupported by the supplied source.
+- output_id: cal-a-4
+  category: Q
+  rationale: The supplied source does not specify a retention duration; the proposal correctly identifies this absence of evidence by expressing appropriate uncertainty.
+student: kn1223b-lavrinenko
+recorded_at: '2026-10-10T12:31:10.598466+00:00'

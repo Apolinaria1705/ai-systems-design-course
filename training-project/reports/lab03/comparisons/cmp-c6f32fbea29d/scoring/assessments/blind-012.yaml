@@ -1,0 +1,8 @@
+schema_version: '1.0'
+blind_id: blind-012
+category: S
+source_pointer: The note records two checked values for the same run and does not say which one the bound
+  applies to.
+rationale: Properly preserves the source ambiguity without resolving it through unsupported assumptions.
+assessed_by: kn1223b-lavrinenko
+recorded_at: '2026-10-10T13:28:16.436037+00:00'

@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "freeze_id": "cmp-c6f32fbea29d",
+  "comparison_dir": "C:\\Users\\Polina\\projects\\ai-systems-design-course\\training-project\\reports\\lab03\\comparisons\\cmp-c6f32fbea29d",
+  "protocol": {
+    "engineering_decision": "whether candidate variant B should replace baseline variant A for the evaluated concept proposal operation",
+    "hypothesis": "explicitly requiring a raw JSON object without extra formatting or preamble will improve structural validity and eliminate parse failures while preserving source grounding and meaning coverage",
+    "semantic_acceptance": "each configuration must achieve a rubric-acceptable rate of at least 0.75 over assessable responses with zero critical unsupported fabrications",
+    "blocking_failures": "any critical unsupported claim (U category) or persistent structural invalidity constitutes a blocking failure",
+    "operational_acceptance": "all attempts must return within 60.0 seconds from attempt start to response; unknown latency or usage values are treated as missing operational telemetry rather than zero",
+    "tradeoff_rule": "variant B may replace variant A if it achieves higher or equal rubric acceptability and strictly avoids structural parse failures without introducing unsupported claims",
+    "decision_rule": {
+      "recommend-b": "candidate configuration B satisfies every blocking condition, demonstrates equal or superior structural and semantic acceptability, and justifies the replacement of variant A",
+      "retain-a": "baseline configuration A satisfies all blocking conditions and candidate variant B fails to justify replacement or introduces regressions",
+      "reject-both": "both candidate configurations violate one or more blocking conditions or fail minimum acceptance thresholds",
+      "seek-more-evidence": "route unavailability, high sample uncertainty, or ambiguous evidence prevents a definitive engineering determination"
+    },
+    "attempt_budget": 16,
+    "timing_boundary": "attempt start to terminal response recorded",
+    "route": {
+      "adapter": "openrouter",
+      "model_id": "openrouter/free"
+    },
+    "order_rule": "course-generated balanced schedule",
+    "resume_window": "48h"
+  },
+  "variant_a_sha256": "69f0f1d6b4b3298353df79e53cff0fd654f15df43117a6e40f865cb655448d91",
+  "variant_b_sha256": "ab6bcded50151783c00764ab43cc1c17f3a5bf4bdb425b62509ecc1dcb47a4ed",
+  "change_declaration": {
+    "changed_property": "raw JSON output constraint",
+    "mechanism": "explicitly forbidding non-JSON preamble and markdown wrapping ensures the model response directly parses as a single valid JSON object under the output contract",
+    "declared_factors": [
+      "raw JSON output constraint"
+    ]
+  },
+  "route": {
+    "adapter": "openrouter",
+    "model_id": "openrouter/free"
+  },
+  "resume_window": "48h",
+  "eligible_reserve_count_at_freeze": 3,
+  "bindings": {
+    "output_schema_sha256": "b656ec5caa60b098b6711283893cfe0a6b0f5391d43accd55f2c136b828ca0c7",
+    "case_family_contract_sha256": "5bad7f720a34f0e5a02127a71841eb9143feaefb05a85887c7701679503867ac",
+    "validator_module_sha256": "f2c763d45afdff72214990c078c75ba10f35d907a36194cab6a0ad81dc436360",
+    "validator_schema_version": "1.0",
+    "development_schedule_sha256": "42e9ec110b6b8d6fb19c4d19964a995ee56b4df5fc3c6f286f4a8088fc277016",
+    "change_declaration_sha256": "994c5941bb05d334041cec939f89863b43748c3ade3575632feb5801bd2fde41",
+    "exposure_ledger_sha256": "a34c1a5a459235652961ed5654cf0e7cf17c2382f8d99cb17434a828ddc14a60"
+  },
+  "frozen_at": "2026-10-10T13:00:20.350534+00:00",
+  "frozen_by": "kn1223b-lavrinenko"
+}

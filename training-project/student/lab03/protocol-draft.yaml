@@ -1,0 +1,16 @@
+﻿engineering_decision: whether candidate variant B should replace baseline variant A for the evaluated concept proposal operation
+hypothesis: explicitly requiring a raw JSON object without extra formatting or preamble will improve structural validity and eliminate parse failures while preserving source grounding and meaning coverage
+semantic_acceptance: each configuration must achieve a rubric-acceptable rate of at least 0.75 over assessable responses with zero critical unsupported fabrications
+blocking_failures: any critical unsupported claim (U category) or persistent structural invalidity constitutes a blocking failure
+operational_acceptance: all attempts must return within 60.0 seconds from attempt start to response; unknown latency or usage values are treated as missing operational telemetry rather than zero
+tradeoff_rule: variant B may replace variant A if it achieves higher or equal rubric acceptability and strictly avoids structural parse failures without introducing unsupported claims
+decision_rule:
+  recommend-b: candidate configuration B satisfies every blocking condition, demonstrates equal or superior structural and semantic acceptability, and justifies the replacement of variant A
+  retain-a: baseline configuration A satisfies all blocking conditions and candidate variant B fails to justify replacement or introduces regressions
+  reject-both: both candidate configurations violate one or more blocking conditions or fail minimum acceptance thresholds
+  seek-more-evidence: route unavailability, high sample uncertainty, or ambiguous evidence prevents a definitive engineering determination
+attempt_budget: 16
+timing_boundary: attempt start to terminal response recorded
+route:
+  adapter: openrouter
+  model_id: openrouter/free

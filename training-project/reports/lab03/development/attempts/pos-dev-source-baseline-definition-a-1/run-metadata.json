@@ -1,0 +1,9 @@
+{
+  "position_id": "pos-dev-source-baseline-definition-a-1",
+  "adapter": "openrouter",
+  "model_id": "openrouter/free",
+  "started_at": "2026-10-10T12:45:14.203135+00:00",
+  "finished_at": "2026-10-10T12:45:19.836255+00:00",
+  "recorded_by": "kn1223b-lavrinenko",
+  "observed_model": "nvidia/nemotron-3-ultra-550b-a55b:free"
+}

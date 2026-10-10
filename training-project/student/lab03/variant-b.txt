@@ -1,0 +1,6 @@
+﻿Answer the task about the supplied source.
+
+Return only one raw JSON object without any additional text, markdown formatting, or preamble, with exactly two fields:
+
+- "case_id": the case identifier given in the task.
+- "proposed_text": your answer, written as one paragraph.

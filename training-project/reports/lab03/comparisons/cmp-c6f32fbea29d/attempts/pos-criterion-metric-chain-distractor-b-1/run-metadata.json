@@ -1,0 +1,9 @@
+{
+  "position_id": "pos-criterion-metric-chain-distractor-b-1",
+  "adapter": "openrouter",
+  "model_id": "openrouter/free",
+  "started_at": "2026-10-10T13:16:57.026530+00:00",
+  "finished_at": "2026-10-10T13:16:59.743229+00:00",
+  "recorded_by": "kn1223b-lavrinenko",
+  "observed_model": "poolside/laguna-s-2.1:free"
+}

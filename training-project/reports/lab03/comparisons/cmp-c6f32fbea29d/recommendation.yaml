@@ -1,0 +1,36 @@
+schema_version: '1.0'
+comparison_id: cmp-c6f32fbea29d
+outcome: recommend-b
+rationale: Candidate variant B satisfies all blocking criteria, achieves superior structural validity
+  and rubric acceptability (7 acceptable vs 5 for A), and completely avoids JSON parse failures without
+  introducing unsupported fabrications.
+limitations:
+- Evaluation is based on a fixed holdout budget of 16 attempts across a single course route family under
+  the openrouter/free provider.
+blocking_failures: any critical unsupported claim (U category) or persistent structural invalidity constitutes
+  a blocking failure
+decision_rule:
+  recommend-b: candidate configuration B satisfies every blocking condition, demonstrates equal or superior
+    structural and semantic acceptability, and justifies the replacement of variant A
+  retain-a: baseline configuration A satisfies all blocking conditions and candidate variant B fails to
+    justify replacement or introduces regressions
+  reject-both: both candidate configurations violate one or more blocking conditions or fail minimum acceptance
+    thresholds
+  seek-more-evidence: route unavailability, high sample uncertainty, or ambiguous evidence prevents a
+    definitive engineering determination
+nested_counts:
+  a:
+    attempted: 8
+    returned: 8
+    structurally_valid: 5
+    assessable: 5
+    rubric_acceptable: 5
+  b:
+    attempted: 8
+    returned: 8
+    structurally_valid: 7
+    assessable: 7
+    rubric_acceptable: 7
+protocol_freeze_id: cmp-c6f32fbea29d
+recorded_by: kn1223b-lavrinenko
+recorded_at: '2026-10-10T13:31:30.712694+00:00'

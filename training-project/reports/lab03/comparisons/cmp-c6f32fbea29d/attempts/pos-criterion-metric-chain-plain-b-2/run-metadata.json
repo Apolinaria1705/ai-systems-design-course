@@ -1,0 +1,9 @@
+{
+  "position_id": "pos-criterion-metric-chain-plain-b-2",
+  "adapter": "openrouter",
+  "model_id": "openrouter/free",
+  "started_at": "2026-10-10T13:16:39.851119+00:00",
+  "finished_at": "2026-10-10T13:16:45.995008+00:00",
+  "recorded_by": "kn1223b-lavrinenko",
+  "observed_model": "liquid/lfm-2.5-2.6b:free"
+}
