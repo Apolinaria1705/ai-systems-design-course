@@ -18,7 +18,7 @@ A report without either mandatory section, without an explicit goal-attainment j
 
 The report includes the required screenshots named in that laboratory. Each screenshot must uniquely identify the author and the date of capture: the operating-system account or GitHub login and the system date must be visible in the image (`Get-Date` or `date` in the same terminal, or the visible clock). A caption in the report does not replace that visible identification.
 
-The submitted package identifies the student's GitHub fork, personal branch, and complete commit hash. Normally all three appear in the report identity section. When a laboratory explicitly uses commit-first verification and therefore cannot place a commit's own hash inside that commit, the committed source report contains the fork and branch, while the generated verification evidence and Microsoft Teams cover message contain the complete final hash.
+The submitted package identifies the student's GitHub fork, personal branch, and complete commit hash. Normally all three appear in the report identity section. When a laboratory explicitly uses commit-first verification and therefore cannot place a commit's own hash inside that commit, the committed source report contains the fork and branch, while the generated verification evidence contains the complete final hash. No separate Microsoft Teams cover message or text-field notification is required; the student attaches only the files listed by that laboratory.
 
 A one-page report cannot receive a high mark.
 

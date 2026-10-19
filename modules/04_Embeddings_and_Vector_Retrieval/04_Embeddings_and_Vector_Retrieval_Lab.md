@@ -515,6 +515,8 @@ Laboratory-specific artifacts:
 - `reports/lab04/stage-c3/configuration-decision.json`
 - `reports/lab04/REPORT.md` (completed from the supplied template)
 
+Do not write a separate Microsoft Teams cover message or fill the assignment text field. Submit only the artifacts listed above.
+
 ## Control questions
 
 1. Why does the `sentence-pair-v1` boundary rule satisfy the relevance judging basis of both evaluation cases while no individual source fragment from `fixed-72-v1` does?
