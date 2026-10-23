@@ -186,6 +186,7 @@
 | Retrieval-unit selection | Відбір одиниць інформаційного пошуку |
 | Rollback | Відкат |
 | Rubric | Рубрика оцінювання |
+| Rubric pass rate | Частка проходження рубрики оцінювання |
 | Same-model variability | Мінливість між запусками тієї самої моделі |
 | Sampling | Вибірка |
 | Sampling uncertainty | Вибіркова невизначеність |
