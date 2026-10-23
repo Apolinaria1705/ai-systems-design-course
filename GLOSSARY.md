@@ -53,6 +53,7 @@
 | Configuration comparison | Порівняння конфігурацій |
 | Constrained sampling | Обмежена вибірка |
 | Content digest | Дайджест вмісту |
+| Context budget | Бюджет контексту |
 | Context window | Вікно контексту |
 | Continuity | Спадкоємність |
 | Controllability | Керованість |
@@ -101,10 +102,10 @@
 | Human revision | Виправлення людиною |
 | Human-in-the-loop | Людина в контурі ухвалення рішень |
 | Hybrid retrieval | Гібридний пошук |
-| Information need | Інформаційна потреба |
 | Index preparation | Підготовка індексу |
 | Index version | Версія індексу |
 | Inference | Виведення |
+| Information need | Інформаційна потреба |
 | Iterative AI-system lifecycle | Ітеративний життєвий цикл системи ШІ |
 | Knowledge owner | Власник знань |
 | Latency | Затримка |
@@ -174,6 +175,8 @@
 | Retrieval operation | Операція інформаційного пошуку |
 | Retrieval unit | Одиниця інформаційного пошуку |
 | Retrieval-augmented generation | Генерування, доповнене пошуком |
+| Retrieval-unit admission criteria | Критерії допуску одиниць інформаційного пошуку |
+| Retrieval-unit selection | Відбір одиниць інформаційного пошуку |
 | Rollback | Відкат |
 | Rubric | Рубрика оцінювання |
 | Same-model variability | Мінливість між запусками тієї самої моделі |
@@ -183,6 +186,7 @@
 | Scalability | Масштабованість |
 | Screening | Попереднє оцінювання |
 | Screenshot | Знімок екрана |
+| Selection record | Запис відбору |
 | Semantic acceptance gate | Шлюз семантичного приймання |
 | Semantic review | Семантичний розгляд |
 | Semantic similarity | Семантична подібність |
@@ -204,6 +208,7 @@
 | Stress-test | Стрес-тест |
 | Structural validation | Структурна перевірка |
 | Structured output | Структурований вихід |
+| Supplied source evidence | Надані джерельні свідчення |
 | Syntactic gate | Синтаксичний шлюз |
 | System boundary | Межа системи |
 | Telemetry | Телеметрія |
