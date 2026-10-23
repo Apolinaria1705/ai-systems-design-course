@@ -38,6 +38,7 @@
 | Branch | Гілка |
 | Brief | Бриф |
 | Byte-identical | Побітово тотожний |
+| Candidate concept definition | Кандидатне визначення поняття |
 | Candidate configuration | Кандидатна конфігурація |
 | Candidate output | Кандидатний вихід |
 | Candidate proposal | Кандидатна пропозиція |
@@ -47,6 +48,7 @@
 | Chunk size | Розмір фрагмента |
 | Chunking | Розбивка на фрагменти |
 | Chunking configuration | Конфігурація розбивки на фрагменти |
+| Claim citation | Цитування твердження |
 | Clone | Клон |
 | Commit | Коміт |
 | Confidence interval | Довірчий інтервал |
@@ -106,6 +108,7 @@
 | Hybrid retrieval | Гібридний пошук |
 | Index preparation | Підготовка індексу |
 | Index version | Версія індексу |
+| Indirect prompt injection | Непряма ін’єкція промпту |
 | Inference | Виведення |
 | Information need | Інформаційна потреба |
 | Iterative AI-system lifecycle | Ітеративний життєвий цикл системи ШІ |
@@ -161,6 +164,7 @@
 | Recall at k | Повнота на k |
 | Reference | Еталон |
 | Reference architecture | Еталонна архітектура |
+| Refusal | Відмова |
 | Regression case | Випадок для регресійної перевірки |
 | Regression check | Регресійна перевірка |
 | Relevance | Релевантність |
@@ -226,10 +230,10 @@
 | Trade-off analysis | Аналіз компромісів |
 | Transcript | Транскрипт |
 | Unsolvable rewrite | Нерозв’язне переписування запиту |
+| Unsupported generation | Непідкріплене генерування |
 | Use case | Сценарій використання |
 | Usefulness threshold | Поріг корисності |
 | Vector index | Векторний індекс |
 | Vector-similarity measure | Міра векторної подібності |
 | Write-once | Одноразовий запис |
 | Zettelkasten | Метод Zettelkasten (картотека нотаток) |
-
