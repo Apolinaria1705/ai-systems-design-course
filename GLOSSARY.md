@@ -101,6 +101,7 @@
 | Human revision | Виправлення людиною |
 | Human-in-the-loop | Людина в контурі ухвалення рішень |
 | Hybrid retrieval | Гібридний пошук |
+| Information need | Інформаційна потреба |
 | Index preparation | Підготовка індексу |
 | Index version | Версія індексу |
 | Inference | Виведення |
@@ -146,6 +147,8 @@
 | Provider-neutral | Нейтральний щодо постачальника |
 | Provisioning log | Журнал налаштування |
 | Query embedding | Ембединг запиту |
+| Query rewriting | Переписування запиту |
+| Query-rewriting rule | Правило переписування запиту |
 | Querying | Виконання запиту |
 | Quota | Квота |
 | Ranked candidate output | Ранжований кандидатний вихід |
@@ -213,6 +216,7 @@
 | Trade-off | Компроміс |
 | Trade-off analysis | Аналіз компромісів |
 | Transcript | Транскрипт |
+| Unsolvable rewrite | Нерозв’язне переписування запиту |
 | Use case | Сценарій використання |
 | Usefulness threshold | Поріг корисності |
 | Vector index | Векторний індекс |
