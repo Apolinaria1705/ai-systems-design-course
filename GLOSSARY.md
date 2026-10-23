@@ -34,6 +34,7 @@
 | Binary source-support screening | Бінарний скринінг підкріплення джерелом |
 | Boundary rule | Правило межі |
 | Bounded configuration decision | Обмежене рішення щодо конфігурації |
+| Bounded model request | Обмежений запит до моделі |
 | Branch | Гілка |
 | Brief | Бриф |
 | Byte-identical | Побітово тотожний |
@@ -54,6 +55,7 @@
 | Constrained sampling | Обмежена вибірка |
 | Content digest | Дайджест вмісту |
 | Context budget | Бюджет контексту |
+| Context construction | Побудова контексту |
 | Context window | Вікно контексту |
 | Continuity | Спадкоємність |
 | Controllability | Керованість |
@@ -132,6 +134,7 @@
 | Open-weight model | Модель з відкритими вагами |
 | Operational evidence | Операційні свідчення |
 | Operator | Оператор |
+| Output contract | Контракт виходу |
 | Overlap | Перекриття |
 | Pairwise comparison | Парне порівняння |
 | Ports and adapters | Порти та адаптери |
@@ -211,6 +214,7 @@
 | Supplied source evidence | Надані джерельні свідчення |
 | Syntactic gate | Синтаксичний шлюз |
 | System boundary | Межа системи |
+| Task instruction | Інструкція завдання |
 | Telemetry | Телеметрія |
 | Tenant | Орендар |
 | Text query | Текстовий запит |
@@ -228,3 +232,4 @@
 | Vector-similarity measure | Міра векторної подібності |
 | Write-once | Одноразовий запис |
 | Zettelkasten | Метод Zettelkasten (картотека нотаток) |
+
