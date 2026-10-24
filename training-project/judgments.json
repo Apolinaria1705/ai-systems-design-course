@@ -1,0 +1,16 @@
+{
+  "Evaluation Case A": [
+    {
+      "stable retrieval identifier": "F-B",
+      "relevance judgment": "not relevant",
+      "rationale": "F-B is the proposal-run receipt and records the model source and version rather than the originating record identifier, record version, and exact supporting-passage sentence span, so the relevance judging basis is not satisfied."
+    }
+  ],
+  "Evaluation Case B": [
+    {
+      "stable retrieval identifier": "F-B",
+      "relevance judgment": "not relevant",
+      "rationale": "F-B identifies execution metadata and the model identifier rather than the originating record, version, and exact passage location required to justify a concept proposal, so the relevance judging basis is not satisfied."
+    }
+  ]
+}
