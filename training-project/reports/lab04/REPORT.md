@@ -4,6 +4,7 @@
 
 - URL форку: https://github.com/Apolinaria1705/ai-systems-design-course
 - Назва особистої гілки: lab04/kn1223b-lavrinenko
+- Повний хеш коміту зі свідченнями: 95448b0effd8da3dd9e8c4e3f1f8ac942b1b27fe
 - Статус завершення: complete
 
 ## Мета роботи
