@@ -266,7 +266,9 @@ Antigravity CLI is the default proposer for this year. Install it only when that
 
 An agent path is **usable** when an existing account or subscription can open the local `training-project`, read the required files, and complete the requested proposal edit within available quota without a new purchase. A path is unusable when authentication, account access, service availability, or quota prevents that operation. Tool preference, convenience, or reluctance to authenticate an existing account is not unavailability.
 
-If neither the default proposer nor another existing agent subscription is usable, do not purchase API access and do not fabricate an agent transcript. Preserve a short note for the later `REPORT.md` naming the path attempted, the date, and the observed result. When the attempt produces an access, service, or quota error, retain a sanitized transcript or screenshot of that error. If the student has no existing agent account or subscription to attempt, state that fact; the laboratory does not require creating or purchasing one. Complete the documented manual path independently before the scheduled demonstration. During that demonstration, the instructor evaluates whether the justification meets the fallback admission rule; this grading decision is not a state-changing laboratory step. The deterministic gates and accepted-artifact path do not change.
+If neither the default proposer nor another existing agent subscription is usable, do not purchase API access and do not fabricate an agent transcript. Preserve a short note for the later `REPORT.md` naming the path attempted, the date, and the observed result. When the attempt produces an access, service, or quota error, retain a sanitized transcript or screenshot of that error. If the student has no existing agent account or subscription to attempt, state that fact; the laboratory does not require creating or purchasing one.
+
+Complete the documented manual path independently before the scheduled demonstration. During that demonstration, the instructor evaluates whether the justification meets the fallback admission rule; this grading decision is not a state-changing laboratory step. The deterministic gates and accepted-artifact path do not change.
 
 On Windows, the default installer is the official user-scope Google script. Run it from a non-administrator PowerShell:
 
@@ -382,7 +384,20 @@ If Step 4 established that no agent path is usable, open `reports/lab01/boundary
 
 Give the agent the following task in the interactive session:
 
-> Read the local supplied system definition in `requirements/SYSTEM_BRIEF.md`, the applicable obligations in `requirements/REQUIREMENTS_BASELINE.md`, the vault boundary in `requirements/VAULT_STRUCTURE.md`, and the comments in `reports/lab01/boundary-proposal.yaml`. Replace only the proposal's placeholder values. Preserve the fixed learning knowledge system defined by the supplied contracts; use my selected non-sensitive academic or professional area only in `personal_domain` as a possible later bounded extension. Keep `schema_version` unchanged, keep `status: proposed`, use a new lowercase hyphenated `proposal_id`, and preserve every field. The AI may propose content but may not approve it, create a decision, run `decide`, run `apply`, or edit `student/design/learning-system-boundary.yaml`. Before editing, explain the fixed system outcome, non-goals, AI, deterministic-workflow, and human responsibilities, usefulness condition, material risk, simpler non-AI baseline, required evidence, and remaining uncertainty. Name which supplied local files support the proposal.
+> Read the local supplied system definition in `requirements/SYSTEM_BRIEF.md`, the applicable obligations in `requirements/REQUIREMENTS_BASELINE.md`, the vault boundary in `requirements/VAULT_STRUCTURE.md`, and the comments in `reports/lab01/boundary-proposal.yaml`. Replace only the proposal's placeholder values. Preserve the fixed learning knowledge system defined by the supplied contracts; use my selected non-sensitive academic or professional area only in `personal_domain` as a possible later bounded extension. Keep `schema_version` unchanged, keep `status: proposed`, use a new lowercase hyphenated `proposal_id`, and preserve every field.
+>
+> The AI may propose content but may not approve it, create a decision, run `decide`, run `apply`, or edit `student/design/learning-system-boundary.yaml`. Before editing, explain:
+>
+> - the fixed system outcome;
+> - non-goals;
+> - AI, deterministic-workflow, and human responsibilities;
+> - the usefulness condition;
+> - material risk;
+> - the simpler non-AI baseline;
+> - required evidence;
+> - remaining uncertainty.
+>
+> Name which supplied local files support the proposal.
 
 On an agent path, answer any domain question without supplying personal or confidential information. Inspect the explanation and the proposed diff before approving the single-file edit. End the agent session after `reports/lab01/boundary-proposal.yaml` has been updated. On the manual fallback, inspect the completed file against the same task before continuing.
 
@@ -449,7 +464,9 @@ Save `reports/lab01/screenshots/07-accepted-contract.png` showing `student/desig
 
 ### Step 10: Prepare evidence and commit the result
 
-Complete `reports/lab01/REPORT.md` from the template copied in Step 5. Keep every supplied heading. Write the report in Ukrainian, in the student's own words. Fill every section, including the identity section with the fork URL, personal branch name, and complete commit hash. Place each required screenshot in the matching section using a relative Markdown image path such as `![віддалені репозиторії Git](screenshots/01-git-remotes.png)`, followed by a one-line caption. For the proposer section, keep `04-proposer-session.png` on the agent path, replace it with `04-manual-fallback.png` when sanitized fallback evidence exists, or remove that image line and explain the absence when the documented fallback produced no such evidence. Do not embed `data:` URIs in this source report.
+Complete `reports/lab01/REPORT.md` from the template copied in Step 5. Keep every supplied heading. Write the report in Ukrainian and in a formal technical style. Use third-person or impersonal constructions; do not use first-person narration such as `я`, `ми`, `мною`, `нами`, `мій`, or `наш`.
+
+Fill every section, including the identity section with the fork URL, personal branch name, and complete commit hash. Place each required screenshot in the matching section using a relative Markdown image path such as `![віддалені репозиторії Git](screenshots/01-git-remotes.png)`, followed by a one-line caption. For the proposer section, keep `04-proposer-session.png` on the agent path, replace it with `04-manual-fallback.png` when sanitized fallback evidence exists, or remove that image line and explain the absence when the documented fallback produced no such evidence. Do not embed `data:` URIs in this source report.
 
 The required screenshot files, captured in earlier steps, are:
 
@@ -482,20 +499,21 @@ From `training-project`, write the Teams copy of the report. The command leaves 
 uv run learning-project prepare-report .\reports\lab01\REPORT.md
 ```
 
-Open the generated file and confirm that each required figure renders as an embedded image rather than a local path. Commit that submission copy with the laboratory evidence.
+Open the generated file and confirm that each required figure renders as an embedded image rather than a local path. This self-contained copy is an ignored Microsoft Teams attachment; do not commit it. GitHub renders the source `reports/lab01/REPORT.md` and its separate relative PNG links instead.
 
 Review the repository state from `training-project`, then commit only student-owned laboratory artifacts. Do not stage `modules/`, `platform/`, `fixtures/`, `tests/public/`, `boundary-proposal.yaml` at the project root, `.venv/`, or `provision.log` at the project root.
 
 ```powershell
 git status --short
 git diff --check
+git rm --cached --ignore-unmatch reports/lab01/submission/REPORT.md
 git add student/design/learning-system-boundary.yaml reports/lab01
 git commit -m "feat(lab01): establish governed AI system boundary"
 git status --short
 git rev-parse HEAD
 ```
 
-Copy the printed commit hash into the identity section of `reports/lab01/REPORT.md`, run `prepare-report` again if that section changed, and amend or add a follow-up commit so the submitted hash matches the identity section.
+Copy the printed commit hash into the identity section of `reports/lab01/REPORT.md`, run `prepare-report` again after that section changes, and amend or add a follow-up commit so the submitted hash matches the identity section. The regenerated `submission/REPORT.md` remains local and ignored.
 
 Authenticate GitHub CLI, then push the personal branch to the student's fork. The push target is `origin`. It is not `upstream`.
 
@@ -504,7 +522,7 @@ gh auth login
 git push -u origin HEAD
 ```
 
-**Expected result:** the working tree is clean after the commit, the branch exists in the student's fork, `git remote -v` still shows the required ownership, `reports/lab01/submission/REPORT.md` contains `data:image/` entries, and the submitted commit contains no upstream-owned edits, `.venv/`, credentials, complete personal vault, or unrelated workstation data.
+**Expected result:** the working tree is clean after the commit despite the local ignored Teams copy, the branch exists in the student's fork, `git remote -v` still shows the required ownership, `reports/lab01/submission/REPORT.md` contains `data:image/` entries but is absent from Git, and the submitted commit contains no upstream-owned edits, `.venv/`, credentials, complete personal vault, or unrelated workstation data.
 
 ## Cleanup and rollback
 
@@ -563,7 +581,7 @@ Attach the following files individually in Microsoft Teams, not as an archive:
 - `reports/lab01/boundary-decision.json`
 - `student/design/learning-system-boundary.yaml`
 
-The source report `reports/lab01/REPORT.md` remains in Git with relative screenshot paths. The Teams narrative file is the `prepare-report` copy. The fork URL, branch name, and complete commit hash belong in the identity section of that report. The submitted commit is the reviewable implementation state. Microsoft Teams is the official timestamped snapshot.
+The source report `reports/lab01/REPORT.md` remains in Git with relative screenshot paths and is the report viewed on GitHub. The ignored Teams narrative file is the `prepare-report` copy and is attached only to the assignment. The fork URL, branch name, and complete commit hash belong in the identity section of that report. The submitted commit is the reviewable implementation state. Microsoft Teams is the official timestamped snapshot.
 
 ## Control questions
 
