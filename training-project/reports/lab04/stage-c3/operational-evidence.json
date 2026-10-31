@@ -10,7 +10,7 @@
       },
       "query latency": {
         "measurement boundary": "wall-clock seconds for executing both declared text queries once per run, averaged over 3 runs in one process",
-        "measurement": 0.039357
+        "measurement": 0.033131
       },
       "query cost": {
         "measurement boundary": "model-backed encodes are charged per text query plus the index re-encoding validation performed by execute-retrieval; CPU-only lexical scoring adds no model cost",
@@ -33,7 +33,7 @@
       },
       "query latency": {
         "measurement boundary": "wall-clock seconds for executing both declared text queries once per run, averaged over 3 runs in one process",
-        "measurement": 0.416321
+        "measurement": 0.445087
       },
       "query cost": {
         "measurement boundary": "model-backed encodes are charged per text query plus the index re-encoding validation performed by execute-retrieval; CPU-only lexical scoring adds no model cost",
@@ -56,7 +56,7 @@
       },
       "query latency": {
         "measurement boundary": "wall-clock seconds for executing both declared text queries once per run, averaged over 3 runs in one process",
-        "measurement": 0.249374
+        "measurement": 0.242311
       },
       "query cost": {
         "measurement boundary": "model-backed encodes are charged per text query plus the index re-encoding validation performed by execute-retrieval; CPU-only lexical scoring adds no model cost",
@@ -79,7 +79,7 @@
       },
       "query latency": {
         "measurement boundary": "wall-clock seconds for executing both declared text queries once per run, averaged over 3 runs in one process",
-        "measurement": 0.253419
+        "measurement": 0.257709
       },
       "query cost": {
         "measurement boundary": "model-backed encodes are charged per text query plus the index re-encoding validation performed by execute-retrieval; CPU-only lexical scoring adds no model cost",
