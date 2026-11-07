@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "lab_id": "lab05",
+  "outcome": "passed",
+  "final_commit": "879fd5bd3eb4d2559a4d4bfbecfc4d572d2cd517",
+  "checks": [
+    {
+      "check_id": "final-commit",
+      "status": "passed",
+      "message": "exact final commit 879fd5bd3eb4d2559a4d4bfbecfc4d572d2cd517 is the current branch head"
+    },
+    {
+      "check_id": "report-headings",
+      "status": "passed",
+      "message": "required report headings are present in order"
+    },
+    {
+      "check_id": "internal-vocabulary",
+      "status": "passed",
+      "message": "no internal course-development vocabulary is present"
+    },
+    {
+      "check_id": "report-identity",
+      "status": "passed",
+      "message": "fork URL and personal branch are recorded"
+    },
+    {
+      "check_id": "report-completion",
+      "status": "passed",
+      "message": "the completion state is recorded"
+    },
+    {
+      "check_id": "report-data-uri",
+      "status": "passed",
+      "message": "the source report embeds no data URIs"
+    },
+    {
+      "check_id": "report-screenshots",
+      "status": "passed",
+      "message": "six exact relative links and five pre-verification screenshot files are present"
+    },
+    {
+      "check_id": "stage-evidence",
+      "status": "passed",
+      "message": "all required workflow evidence, the rubric judgments, and the bounded configuration decision are present"
+    }
+  ],
+  "generated_at": "2026-11-07T14:34:50.308328+00:00"
+}
