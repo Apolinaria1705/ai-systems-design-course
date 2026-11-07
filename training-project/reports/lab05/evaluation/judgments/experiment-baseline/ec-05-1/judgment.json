@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "shared experiment protocol id": "SEP-05-1",
+  "configuration role": "experiment baseline",
+  "evaluation case id": "EC-05-1",
+  "outcome type": "candidate concept definition",
+  "rubric check": "Candidate concept definition check",
+  "human evaluator judgment": "pass",
+  "judgment rationale": "Claims were verified against selected retrieval unit F-A; each claim reformulates source evidence without ungrounded additions.",
+  "review minutes": 2.0,
+  "outcome sha256": "59b2383afb61c1a18339b01c857a5911899ad7739def8e7e640beef0fd145d64",
+  "recorded by": "kn1223b-lavrinenko",
+  "authority boundary": "The recorded judgment is not an authorization to change the canonical knowledge collection."
+}
