@@ -249,6 +249,8 @@
 | Throughput | Пропускна здатність |
 | Token | Токен |
 | Tokenization | Токенізація |
+| Tool | Інструмент |
+| Tool inventory | Перелік доступних інструментів |
 | Top-k retrieval | Пошук верхніх k |
 | Trade-off | Компроміс |
 | Trade-off analysis | Аналіз компромісів |
