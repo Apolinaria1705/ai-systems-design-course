@@ -12,6 +12,7 @@
 | Actor | Актор |
 | Adaptability | Адаптивність |
 | Agent | Агент |
+| Agent action plan | План дій агента |
 | Agent environment | Середовище агента |
 | Agent harness | Середовище взаємодії з ШІ-агентом |
 | Agent loop | Цикл агента |
@@ -162,6 +163,7 @@
 | Output contract | Контракт виходу |
 | Overlap | Перекриття |
 | Pairwise comparison | Парне порівняння |
+| Planning agent actions | Планування дій агента |
 | Ports and adapters | Порти та адаптери |
 | Precision | Точність позитивних передбачень |
 | Precision at k | Точність на k |
