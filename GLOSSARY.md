@@ -11,7 +11,10 @@
 | Accepted state | Прийнятий стан |
 | Actor | Актор |
 | Adaptability | Адаптивність |
+| Agent | Агент |
+| Agent environment | Середовище агента |
 | Agent harness | Середовище взаємодії з ШІ-агентом |
+| Agent loop | Цикл агента |
 | AI engineering | Інженерія штучного інтелекту |
 | AI engineering stack | Стек інженерії штучного інтелекту |
 | AI judge | ШІ-оцінювач |
@@ -144,6 +147,7 @@
 | Model-backed concept-proposal operation | Операція пропозиції поняття з використанням моделі |
 | Model-backed prerequisite-explanation operation | Операція пояснення передумов із використанням моделі |
 | Modular monolith | Модульний моноліт |
+| Multi-agent system | Багатоагентна система |
 | Mutation authority | Повноваження змінювати стан |
 | Next-token generation | Генерування наступного токена |
 | Non-goals | Нецілі |
