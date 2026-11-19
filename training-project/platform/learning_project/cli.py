@@ -734,6 +734,12 @@ def _build_parser() -> argparse.ArgumentParser:
             else:
                 generation.add_argument('--runs-dir', type=Path, required=True)
 
+    lab07 = commands.add_parser('lab07', help='Observe a bounded model-selected read.')
+    lab07_commands = lab07.add_subparsers(dest='lab07_command', required=True)
+    first = lab07_commands.add_parser('run-first-action')
+    first.add_argument('--model', required=True)
+    first.add_argument('--output-dir', type=Path, required=True)
+
     return parser
 
 
@@ -1559,6 +1565,13 @@ def _run_lab06(args: argparse.Namespace) -> int:
     raise WorkflowError(f"Unknown Laboratory 06 command: {args.lab06_command}")
 
 
+def _run_lab07(args: argparse.Namespace) -> int:
+    from .lab07 import run_first_action
+    result = run_first_action(model_id=args.model, output_dir=args.output_dir)
+    print(json.dumps(result, ensure_ascii=False))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     args = _build_parser().parse_args(argv)
     handlers = {
@@ -1572,6 +1585,7 @@ def main(argv: list[str] | None = None) -> int:
         "lab04": _run_lab04,
         "lab05": _run_lab05,
         "lab06": _run_lab06,
+        "lab07": _run_lab07,
     }
     try:
         return handlers[args.command](args)
