@@ -16,6 +16,7 @@
 | Agent environment | Середовище агента |
 | Agent harness | Середовище взаємодії з ШІ-агентом |
 | Agent loop | Цикл агента |
+| Agent memory | Пам’ять агента |
 | AI engineering | Інженерія штучного інтелекту |
 | AI engineering stack | Стек інженерії штучного інтелекту |
 | AI judge | ШІ-оцінювач |
