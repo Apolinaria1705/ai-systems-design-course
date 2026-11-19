@@ -17,6 +17,7 @@
 | Agent harness | Середовище взаємодії з ШІ-агентом |
 | Agent loop | Цикл агента |
 | Agent memory | Пам’ять агента |
+| Agent operation orchestration | Оркестрація операцій агента |
 | AI engineering | Інженерія штучного інтелекту |
 | AI engineering stack | Стек інженерії штучного інтелекту |
 | AI judge | ШІ-оцінювач |
@@ -128,6 +129,7 @@
 | Indirect prompt injection | Непряма ін’єкція промпту |
 | Inference | Виведення |
 | Information need | Інформаційна потреба |
+| Inter-agent orchestration | Оркестрація міжагентної взаємодії |
 | Iterative AI-system lifecycle | Ітеративний життєвий цикл системи ШІ |
 | Knowledge extraction | Видобування знань |
 | Knowledge graph | Граф знань |
@@ -161,6 +163,7 @@
 | Open-weight model | Модель з відкритими вагами |
 | Operational evidence | Операційні свідчення |
 | Operator | Оператор |
+| Orchestrator agent | Агент-оркестратор |
 | Output contract | Контракт виходу |
 | Overlap | Перекриття |
 | Pairwise comparison | Парне порівняння |
