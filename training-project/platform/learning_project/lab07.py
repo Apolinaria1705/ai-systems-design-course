@@ -18,9 +18,15 @@ from .workflow import WorkflowError
 DEFAULT_CORPUS = Path(__file__).resolve().parents[2] / 'cases' / 'lab07' / 'accessible-passages.json'
 OUTPUTS = ('attempt.json', 'request.json', 'provider-response.json', 'action.json', 'trace.json', 'run-metadata.json')
 OPERATIONS = ('retrieval operation', 'model-backed prerequisite-explanation operation')
-ACTION_SCHEMA = {'type': 'object', 'properties': {
-    'operation': {'type': 'string'}, 'arguments': {'type': 'object'}},
-    'required': ['operation', 'arguments'], 'additionalProperties': False}
+ACTION_SCHEMA = {'type': 'object', 'oneOf': [
+    {'properties': {'operation': {'const': 'retrieval operation'}, 'arguments': {
+        'type': 'object', 'properties': {'text query': {'type': 'string', 'minLength': 1},
+                                      'collection': {'const': 'S-AGENT/v1'}},
+        'required': ['text query', 'collection'], 'additionalProperties': False}},
+     'required': ['operation', 'arguments'], 'additionalProperties': False},
+    *[{'properties': {'operation': {'const': operation}, 'arguments': {'type': 'object', 'maxProperties': 0}},
+       'required': ['operation', 'arguments'], 'additionalProperties': False}
+      for operation in (OPERATIONS[1], 'stop')]]}
 
 
 def run_first_action(*, model_id: str, output_dir: Path, runner=subprocess.run) -> dict:
@@ -43,14 +49,16 @@ def run_first_action(*, model_id: str, output_dir: Path, runner=subprocess.run) 
             'Alternatively propose stop with empty arguments. No canonical writes are permitted.'),
         'supplied source evidence': [initial],
         'output contract': 'Return exactly one JSON object with operation (string) and arguments (object). '
-                           'Request one operation from the tool inventory or propose stop. No private reasoning is required.'}
+                           'Request one operation from the tool inventory or propose stop. No private reasoning is required. '
+                           'Action schema: ' + json.dumps(ACTION_SCHEMA, ensure_ascii=False)}
     _write(output_dir / 'attempt.json', {'adapter': 'agy', 'model_id': model_id,
-        'collection_version': corpus['collection_version'], 'attempts': 1})
+        'collection_version': corpus['collection_version'], 'attempts': 1,
+        'acquisition': 'prompt-schema; no CLI repair turn'})
     _write(output_dir / 'request.json', request)
     prompt = ('Do not call tools, commands, skills, plugins or external resources. '
               'Only return the requested JSON action; application code will perform any permitted operation.\n\n'
               + json.dumps(request, ensure_ascii=False))
-    command = ['agy', '--print', prompt, '--model', model_id, '--json-schema', json.dumps(ACTION_SCHEMA),
+    command = ['agy', '--print', prompt, '--model', model_id,
                '--output-format', 'json', '--print-timeout', '5m', '--disable-slash-commands',
                '--settings', json.dumps({'useG1Credits': False})]
     if platform.system() != 'Windows':

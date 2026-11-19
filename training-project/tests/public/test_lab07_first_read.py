@@ -33,6 +33,25 @@ def test_model_query_drives_actual_read_without_delivering_new_passage(tmp_path)
     assert DEFAULT_CORPUS.read_bytes() == corpus_before
 
 
+def test_prompt_schema_acquisition_does_not_add_agy_repair_turn(tmp_path):
+    from learning_project.lab07 import run_first_action, ACTION_SCHEMA
+    calls = []
+    def runner(command, **kwargs):
+        calls.append(command)
+        return SimpleNamespace(returncode=0, stdout=json.dumps({'status': 'SUCCESS',
+            'response': json.dumps({'operation': 'stop', 'arguments': {}})}), stderr='')
+    run_first_action(model_id='test', output_dir=tmp_path/'run', runner=runner)
+    command = calls[0]
+    assert '--json-schema' not in command
+    request = json.loads((tmp_path/'run/request.json').read_text())
+    assert json.dumps(ACTION_SCHEMA, ensure_ascii=False) in request['output contract']
+    assert 'retrieval operation' in json.dumps(ACTION_SCHEMA)
+    assert 'model-backed prerequisite-explanation operation' in json.dumps(ACTION_SCHEMA)
+    assert 'stop' in json.dumps(ACTION_SCHEMA)
+    assert json.loads((tmp_path/'run/attempt.json').read_text())['acquisition'] == 'prompt-schema; no CLI repair turn'
+
+
+
 def test_injected_runner_is_not_mislabelled_as_verified_live_evidence(tmp_path):
     from learning_project.lab07 import run_first_action
     def runner(*args, **kwargs):
