@@ -317,3 +317,34 @@ class PrepareReportCommandTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def test_cli_explicit_image_bounds_preserve_large_checkpoint(tmp_path):
+    import base64
+    import re
+    from PIL import Image
+    report = tmp_path/'REPORT.md'
+    image = tmp_path/'checkpoint.png'
+    Image.new('RGB', (1600, 1300), 'white').save(image)
+    report.write_text('![checkpoint](checkpoint.png)\n', encoding='utf-8')
+    try:
+        code, out, err = run_cli(['prepare-report', str(report), '--max-width', '1800', '--max-height', '1800'])
+    except SystemExit as exc:
+        code = exc.code
+    assert code == 0, 'CLI must expose existing image-bound options without changing defaults'
+    matched = re.search(r'data:image/png;base64,([A-Za-z0-9+/=]+)', (tmp_path/'submission/REPORT.md').read_text())
+    assert matched is not None
+    assert base64.b64decode(matched.group(1)) == image.read_bytes()
+
+
+def test_cli_rejects_nonpositive_image_bounds_before_writing(tmp_path):
+    from PIL import Image
+    report = tmp_path/'REPORT.md'
+    Image.new('RGB', (10, 10), 'white').save(tmp_path/'checkpoint.png')
+    report.write_text('![checkpoint](checkpoint.png)\n', encoding='utf-8')
+    for flag in ('--max-width', '--max-height'):
+        for value in ('0', '-1'):
+            code, out, err = run_cli(['prepare-report', str(report), flag, value])
+            assert code == 1
+            assert 'positive' in err
+            assert not (tmp_path/'submission').exists()

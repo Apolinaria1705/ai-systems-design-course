@@ -106,7 +106,7 @@ from .lab05 import (
     verify_lab05,
 )
 from .openai_compatible import run_openrouter
-from .report_submission import prepare_report
+from .report_submission import DEFAULT_MAX_HEIGHT, DEFAULT_MAX_WIDTH, prepare_report
 from .workflow import (
     ACCEPTED_FILENAME,
     DECISION_FILENAME,
@@ -179,6 +179,11 @@ def _build_parser() -> argparse.ArgumentParser:
         type=Path,
         help="Submission copy (default: <report-dir>/submission/REPORT.md).",
     )
+
+    prepare_report_command.add_argument('--max-width', type=int, default=DEFAULT_MAX_WIDTH,
+        help='Maximum embedded image width in pixels (default: %(default)s).')
+    prepare_report_command.add_argument('--max-height', type=int, default=DEFAULT_MAX_HEIGHT,
+        help='Maximum embedded image height in pixels (default: %(default)s).')
 
     lab02 = commands.add_parser("lab02", help="Run the Laboratory 02 governed workflow.")
     lab02_commands = lab02.add_subparsers(dest="lab02_command", required=True)
@@ -812,7 +817,10 @@ def _run_doctor(args: argparse.Namespace) -> int:
 
 
 def _run_prepare_report(args: argparse.Namespace) -> int:
-    output_path, image_count = prepare_report(args.report, output_path=args.output)
+    if args.max_width <= 0 or args.max_height <= 0:
+        raise WorkflowError('Embedded image bounds must be positive integers.')
+    output_path, image_count = prepare_report(args.report, output_path=args.output,
+        max_width=args.max_width, max_height=args.max_height)
     print(f"Wrote the submission report to {output_path}.")
     print(f"Embedded images: {image_count}")
     return 0
