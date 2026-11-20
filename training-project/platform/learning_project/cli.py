@@ -736,6 +736,9 @@ def _build_parser() -> argparse.ArgumentParser:
 
     lab07 = commands.add_parser('lab07', help='Observe a bounded model-selected read.')
     lab07_commands = lab07.add_subparsers(dest='lab07_command', required=True)
+    boundaries = lab07_commands.add_parser('check-boundaries', help='Controlled diagnostic transports; no live model calls.')
+    boundaries.add_argument('--first-action-dir', type=Path, required=True)
+    boundaries.add_argument('--output-dir', type=Path, required=True)
     first = lab07_commands.add_parser('run-first-action')
     first.add_argument('--model', required=True)
     first.add_argument('--output-dir', type=Path, required=True)
@@ -1576,7 +1579,10 @@ def _run_lab06(args: argparse.Namespace) -> int:
 def _run_lab07(args: argparse.Namespace) -> int:
     from .lab07 import run_first_action
     from .lab07_loop import continue_adaptive
-    if args.lab07_command == 'run-fixed':
+    if args.lab07_command == 'check-boundaries':
+        from .lab07_boundaries import run_boundary_checks
+        result = run_boundary_checks(first_action_dir=args.first_action_dir, output_dir=args.output_dir)
+    elif args.lab07_command == 'run-fixed':
         from .lab07_comparison import run_fixed
         result = run_fixed(first_action_dir=args.first_action_dir, model_id=args.model, output_dir=args.output_dir)
     elif args.lab07_command == 'continue-adaptive':

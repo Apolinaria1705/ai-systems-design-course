@@ -21,7 +21,8 @@ CONTEXT_BUDGET = 600  # Text characters only; not a token or full-prompt limit.
 MAX_DECISIONS = 3  # Additional choices after the existing first action; no automatic retries.
 
 
-def _selection(candidates: list, query: str, corpus: dict) -> dict:
+def _selection(candidates: list, query: str, corpus: dict, *, context_budget_characters=None) -> dict:
+    budget = CONTEXT_BUDGET if context_budget_characters is None else context_budget_characters
     units = []
     for unit in candidates:
         locator = unit['provenance_link']
@@ -31,14 +32,14 @@ def _selection(candidates: list, query: str, corpus: dict) -> dict:
             'record id': locator['source_id'], 'version': locator['version'],
             'sentences': locator['location'], 'resolves_to_registered_source_material': resolves}})
     if not units:
-        return {'context budget characters': CONTEXT_BUDGET, 'text query': query,
+        return {'context budget characters': budget, 'text query': query,
                 'ranked candidate output': [], 'supplied source evidence': [], 'exclusions': [],
-                'remaining context budget characters': CONTEXT_BUDGET,
+                'remaining context budget characters': budget,
                 'retrieval-unit admission criteria': 'RUS-05-v1'}
     return _build_selection_record(fixture={
         'retrieval_unit_admission_criteria': {'rule_id': 'RUS-05-v1',
             'criteria_order': ['provenance-link resolution', 'context-budget fit'],
-            'context_budget_characters': CONTEXT_BUDGET},
+            'context_budget_characters': budget},
         'required_text_query': query, 'selection_record_id': 'adaptive-read-selection',
         'ranked_candidate_output': units}, text_query=query)
 
@@ -145,8 +146,11 @@ def _validate_generation(outcome: dict, evidence: list) -> None:
 
 
 def continue_adaptive(*, first_action_dir: Path, model_id: str, output_dir: Path,
-                      runner=subprocess.run) -> dict:
-    """One bounded continuation from a validated retained first-action capture."""
+                      runner=subprocess.run, context_budget_characters=None) -> dict:
+    """One bounded continuation; optional budget is for controlled delivery probes."""
+    budget = CONTEXT_BUDGET if context_budget_characters is None else context_budget_characters
+    if type(budget) is not int or not 0 < budget <= CONTEXT_BUDGET:
+        raise WorkflowError('The diagnostic context budget must be a positive integer within the normal budget.')
     if not isinstance(model_id, str) or not model_id.strip():
         raise WorkflowError('An explicit continuation model id is required.')
     # Reserve the whole output namespace before any model invocation; final writes use shared protection.
@@ -160,7 +164,7 @@ def continue_adaptive(*, first_action_dir: Path, model_id: str, output_dir: Path
         raise WorkflowError('Adaptive outputs are create-only; an output already exists.')
     first, corpus, query, candidates = _validated_first_read(first_action_dir)
     _write(output_dir/'attempt.json', {'requested_model': model_id, 'first_action_capture': first,
-        'source_resource': corpus, 'context_budget_characters': CONTEXT_BUDGET,
+        'source_resource': corpus, 'context_budget_characters': budget,
         'maximum_additional_decisions': MAX_DECISIONS, 'attempts_per_call': 1,
         'acquisition': 'prompt-schema; no CLI repair turn', 'settings': {'useG1Credits': False}})
     started = time.monotonic()
@@ -177,7 +181,7 @@ def continue_adaptive(*, first_action_dir: Path, model_id: str, output_dir: Path
             decisions = n
             folder = output_dir/f'decision-{n}'
             record = None
-            selection = _selection(candidates, query, corpus)
+            selection = _selection(candidates, query, corpus, context_budget_characters=budget)
             _write(folder/'selection-record.json', selection)
             evidence = selection['supplied source evidence']
             request = {'task instruction': QUESTION + ' Choose the next permitted operation. '
