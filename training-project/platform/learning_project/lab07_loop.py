@@ -84,7 +84,7 @@ def _call(request: dict, *, model_id: str, folder: Path, runner) -> dict:
     _write(folder/'call-metadata.json', {'requested_model': model_id, 'failure': failure,
         'provider_process_seconds': elapsed, 'evidence_kind':
         'live provider invocation' if runner is subprocess.run else 'injected runner; not live attestation',
-        'timing_boundary': 'One AGY process invocation through completion only.',
+        'timing_boundary': 'One transport invocation through completion only.',
         'consumption': 'Full provider envelope preserved; missing usage is unknown, not zero.'})
     if failure:
         raise WorkflowError(failure)

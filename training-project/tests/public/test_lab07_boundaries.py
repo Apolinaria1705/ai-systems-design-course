@@ -36,6 +36,10 @@ def test_diagnostic_denial_never_executes_canonical_write(tmp_path):
     assert DEFAULT_CORPUS.read_bytes() == source
     assert result['live_provider_invocations'] == 0
     assert 'diagnostic' in result['evidence_kind']
+    for metadata_path in out.rglob('call-metadata.json'):
+        metadata = load(metadata_path)
+        assert metadata['evidence_kind'] == 'injected runner; not live attestation'
+        assert metadata['timing_boundary'] == 'One transport invocation through completion only.'
 
 
 def test_delivery_probe_labels_controlled_budget_and_preserves_omitted_text(tmp_path):
