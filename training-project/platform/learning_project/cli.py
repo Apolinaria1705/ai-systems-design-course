@@ -736,6 +736,11 @@ def _build_parser() -> argparse.ArgumentParser:
 
     lab07 = commands.add_parser('lab07', help='Observe a bounded model-selected read.')
     lab07_commands = lab07.add_subparsers(dest='lab07_command', required=True)
+    for command in ('init-report', 'validate-report', 'verify'):
+        reporting = lab07_commands.add_parser(command)
+        reporting.add_argument('--report-dir', type=Path, required=True)
+        if command == 'verify':
+            reporting.add_argument('--final-commit', required=True)
     boundaries = lab07_commands.add_parser('check-boundaries', help='Controlled diagnostic transports; no live model calls.')
     boundaries.add_argument('--first-action-dir', type=Path, required=True)
     boundaries.add_argument('--output-dir', type=Path, required=True)
@@ -1577,6 +1582,19 @@ def _run_lab06(args: argparse.Namespace) -> int:
 
 
 def _run_lab07(args: argparse.Namespace) -> int:
+    if args.lab07_command in ('init-report', 'validate-report', 'verify'):
+        from . import lab07_reporting
+        if args.lab07_command == 'init-report':
+            result = lab07_reporting.init_report(report_dir=args.report_dir)
+            key = 'status'
+        elif args.lab07_command == 'verify':
+            result = lab07_reporting.verify(report_dir=args.report_dir, final_commit=args.final_commit)
+            key = 'outcome'
+        else:
+            result = lab07_reporting.validate_report(report_dir=args.report_dir)
+            key = 'status'
+        print(json.dumps(result, ensure_ascii=False))
+        return 0 if result[key] == 'passed' else 1
     from .lab07 import run_first_action
     from .lab07_loop import continue_adaptive
     if args.lab07_command == 'check-boundaries':
