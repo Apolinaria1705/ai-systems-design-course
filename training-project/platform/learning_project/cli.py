@@ -743,6 +743,10 @@ def _build_parser() -> argparse.ArgumentParser:
     continuation.add_argument('--first-action-dir', type=Path, required=True)
     continuation.add_argument('--model', required=True)
     continuation.add_argument('--output-dir', type=Path, required=True)
+    fixed = lab07_commands.add_parser('run-fixed', help='Admit the same retained read and generate once without model decisions.')
+    fixed.add_argument('--first-action-dir', type=Path, required=True)
+    fixed.add_argument('--model', required=True)
+    fixed.add_argument('--output-dir', type=Path, required=True)
 
     return parser
 
@@ -1572,7 +1576,10 @@ def _run_lab06(args: argparse.Namespace) -> int:
 def _run_lab07(args: argparse.Namespace) -> int:
     from .lab07 import run_first_action
     from .lab07_loop import continue_adaptive
-    if args.lab07_command == 'continue-adaptive':
+    if args.lab07_command == 'run-fixed':
+        from .lab07_comparison import run_fixed
+        result = run_fixed(first_action_dir=args.first_action_dir, model_id=args.model, output_dir=args.output_dir)
+    elif args.lab07_command == 'continue-adaptive':
         result = continue_adaptive(first_action_dir=args.first_action_dir, model_id=args.model, output_dir=args.output_dir)
     else:
         result = run_first_action(model_id=args.model, output_dir=args.output_dir)
