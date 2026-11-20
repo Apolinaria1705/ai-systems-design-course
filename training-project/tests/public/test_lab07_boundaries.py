@@ -122,6 +122,25 @@ def test_collision_stops_before_input_read_and_preserves_target(tmp_path, monkey
         assert slot.read_text() == 'unchanged'
 
 
+@pytest.mark.parametrize('query', ['teaching route', 'vector'])
+def test_controlled_delivery_check_does_not_require_favorable_live_candidates(tmp_path, query):
+    from learning_project.lab07_boundaries import run_boundary_checks
+    first = tmp_path/'first'
+    action = {'operation': 'retrieval operation', 'arguments': {'text query': query, 'collection': 'S-AGENT/v1'}}
+    run_first_action(model_id='test', output_dir=first, runner=lambda *a, **kw:
+        SimpleNamespace(returncode=0, stderr='', stdout=json.dumps({'status': 'SUCCESS', 'response': json.dumps(action)})))
+    assert len(load(first/'trace.json')['ranked candidate output']) == 1
+    out = tmp_path/'checks'
+    result = run_boundary_checks(first_action_dir=first, output_dir=out)
+    assert result['retained_versus_delivered'] == 'passed'
+    assert load(out/'attempt.json')['first_action_capture']['trace.json'] == load(first/'trace.json')
+    selected = load(out/'delivery/decision-2/selection-record.json')
+    assert [u['retrieval unit id'] for u in selected['supplied source evidence']] == ['AP-1']
+    omitted = next(u['text'] for u in load(DEFAULT_CORPUS)['fragments'] if u['retrieval_unit_id'] == 'AP-2')
+    assert omitted not in json.dumps(load(out/'delivery/decision-2/request.json'))
+    assert omitted in json.dumps(load(out/'delivery/retained-state.json'))
+
+
 def test_controlled_budget_changes_delivery_without_erasing_retention(tmp_path):
     from learning_project.lab07_loop import continue_adaptive
     first = first_read(tmp_path/'first')

@@ -33,11 +33,15 @@ def run_boundary_checks(*, first_action_dir: Path, output_dir: Path) -> dict:
             or trace['executed input'] is not None or trace['returned result'] is not None
             or _read(DEFAULT_CORPUS) != corpus):
         raise WorkflowError('Permission boundary check failed; preserve all diagnostic outputs.')
+    delivery_choices = iter([
+        {'operation': 'retrieval operation', 'arguments': {
+            'text query': 'query embedding vector comparison', 'collection': corpus['collection_version']}},
+        {'operation': 'stop', 'arguments': {}}])
     continue_adaptive(first_action_dir=first_action_dir, model_id='diagnostic-injected',
         output_dir=output_dir/'delivery', context_budget_characters=150,
-        runner=lambda *a, **kw: _response({'operation': 'stop', 'arguments': {}}))
-    selection = _read(output_dir/'delivery/decision-1/selection-record.json')
-    request = _read(output_dir/'delivery/decision-1/request.json')
+        runner=lambda *a, **kw: _response(next(delivery_choices)))
+    selection = _read(output_dir/'delivery/decision-2/selection-record.json')
+    request = _read(output_dir/'delivery/decision-2/request.json')
     retained = _read(output_dir/'delivery/retained-state.json')
     omitted = next(u['text'] for u in corpus['fragments'] if u['retrieval_unit_id'] == 'AP-2')
     if ([u['retrieval unit id'] for u in selection['supplied source evidence']] != ['AP-1']
