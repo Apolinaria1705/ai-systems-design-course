@@ -739,6 +739,10 @@ def _build_parser() -> argparse.ArgumentParser:
     first = lab07_commands.add_parser('run-first-action')
     first.add_argument('--model', required=True)
     first.add_argument('--output-dir', type=Path, required=True)
+    continuation = lab07_commands.add_parser('continue-adaptive', help='Continue one bounded prerequisite task.')
+    continuation.add_argument('--first-action-dir', type=Path, required=True)
+    continuation.add_argument('--model', required=True)
+    continuation.add_argument('--output-dir', type=Path, required=True)
 
     return parser
 
@@ -1567,7 +1571,11 @@ def _run_lab06(args: argparse.Namespace) -> int:
 
 def _run_lab07(args: argparse.Namespace) -> int:
     from .lab07 import run_first_action
-    result = run_first_action(model_id=args.model, output_dir=args.output_dir)
+    from .lab07_loop import continue_adaptive
+    if args.lab07_command == 'continue-adaptive':
+        result = continue_adaptive(first_action_dir=args.first_action_dir, model_id=args.model, output_dir=args.output_dir)
+    else:
+        result = run_first_action(model_id=args.model, output_dir=args.output_dir)
     print(json.dumps(result, ensure_ascii=False))
     return 0
 
