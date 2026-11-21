@@ -1,0 +1,7 @@
+{
+    "teaching_prediction_comparison":  "Observed outcomes align with the theoretical prediction: graph expansion adds F-2 for EC-06-1-v1 to complete the two-hop prerequisite chain, while duplicate-only discovery in EC-06-2-v1 yields identical bounded model requests.",
+    "rationale":  "Decision follows frozen acceptance conditions based on observed rubric pass rates, blocking failure checks, query duration within 360s, human review within 10 min/output, and token consumption within 200,000 tokens.",
+    "graph_preparation_trade_off":  "Graph expansion improves prerequisite coverage when initial retrieval omits intermediate links, but introduces upfront human entity-resolution and relation-review effort alongside ongoing graph maintenance overhead.",
+    "engineering_team":  "kn1223b-lavrinenko-eng-team",
+    "decision":  "retain without graph expansion"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "lab06-decision-v1",
+  "protocol_digest": "8c33b26d1cda037609dccc72fc514f9d837fbb943b227bd8cacb6cac87e0ed93",
+  "judgments_digest": "1bda721b80e8e142f5ba81c7e14aa50e1f47f508434ba89f28143bced9b30f1d",
+  "assessment_digest": "8a09f0b40e4f592e5a1ab4c6688eb650095720d3be75274c94fa90db96fc5fbd",
+  "engineering_decision": {
+    "teaching_prediction_comparison": "Observed outcomes align with the theoretical prediction: graph expansion adds F-2 for EC-06-1-v1 to complete the two-hop prerequisite chain, while duplicate-only discovery in EC-06-2-v1 yields identical bounded model requests.",
+    "rationale": "Decision follows frozen acceptance conditions based on observed rubric pass rates, blocking failure checks, query duration within 360s, human review within 10 min/output, and token consumption within 200,000 tokens.",
+    "graph_preparation_trade_off": "Graph expansion improves prerequisite coverage when initial retrieval omits intermediate links, but introduces upfront human entity-resolution and relation-review effort alongside ongoing graph maintenance overhead.",
+    "engineering_team": "kn1223b-lavrinenko-eng-team",
+    "decision": "retain without graph expansion"
+  },
+  "scope": "These exposed development cases only; no deployment or population-wide claim.",
+  "authority_boundary": "Records the engineering team decision for these development cases only; no deployment approval or accepted-state write."
+}
