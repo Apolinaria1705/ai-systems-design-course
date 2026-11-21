@@ -2,12 +2,12 @@
   "schema_version": "1.0",
   "lab_id": "lab06",
   "outcome": "failed",
-  "final_commit": "27a36fb4267cc6deeac770d9321fb92a944e1d1b",
+  "final_commit": "9abdd45353d0eb7214da98b9b50e1c0f6261ac3b",
   "checks": [
     {
       "check_id": "final-commit",
       "status": "passed",
-      "message": "exact final commit 27a36fb4267cc6deeac770d9321fb92a944e1d1b is the current branch head"
+      "message": "exact final commit 9abdd45353d0eb7214da98b9b50e1c0f6261ac3b is the current branch head"
     },
     {
       "check_id": "report-headings",
@@ -21,8 +21,8 @@
     },
     {
       "check_id": "report-identity",
-      "status": "failed",
-      "message": "The report identity section must contain the student's GitHub fork URL."
+      "status": "passed",
+      "message": "fork URL and personal branch are recorded"
     },
     {
       "check_id": "report-completion",
@@ -51,8 +51,8 @@
     },
     {
       "check_id": "committed-inputs",
-      "status": "failed",
-      "message": "The report personal branch must name the current branch."
+      "status": "passed",
+      "message": "source report, existing machine evidence and collection match committed bytes"
     },
     {
       "check_id": "domain-evidence",
@@ -60,7 +60,7 @@
       "message": "existing deterministic checks match the recorded human inputs and decision"
     }
   ],
-  "generated_at": "2026-11-21T13:01:18.038562+00:00",
+  "generated_at": "2026-11-21T13:24:30.149176+00:00",
   "completion_state": "complete",
   "domain_completion_claimed": false
 }
