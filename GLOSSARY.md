@@ -11,7 +11,13 @@
 | Accepted state | Прийнятий стан |
 | Actor | Актор |
 | Adaptability | Адаптивність |
+| Agent | Агент |
+| Agent action plan | План дій агента |
+| Agent environment | Середовище агента |
 | Agent harness | Середовище взаємодії з ШІ-агентом |
+| Agent loop | Цикл агента |
+| Agent memory | Пам’ять агента |
+| Agent operation orchestration | Оркестрація операцій агента |
 | AI engineering | Інженерія штучного інтелекту |
 | AI engineering stack | Стек інженерії штучного інтелекту |
 | AI judge | ШІ-оцінювач |
@@ -123,6 +129,7 @@
 | Indirect prompt injection | Непряма ін’єкція промпту |
 | Inference | Виведення |
 | Information need | Інформаційна потреба |
+| Inter-agent orchestration | Оркестрація міжагентної взаємодії |
 | Iterative AI-system lifecycle | Ітеративний життєвий цикл системи ШІ |
 | Knowledge extraction | Видобування знань |
 | Knowledge graph | Граф знань |
@@ -144,6 +151,7 @@
 | Model-backed concept-proposal operation | Операція пропозиції поняття з використанням моделі |
 | Model-backed prerequisite-explanation operation | Операція пояснення передумов із використанням моделі |
 | Modular monolith | Модульний моноліт |
+| Multi-agent system | Багатоагентна система |
 | Mutation authority | Повноваження змінювати стан |
 | Next-token generation | Генерування наступного токена |
 | Non-goals | Нецілі |
@@ -155,9 +163,11 @@
 | Open-weight model | Модель з відкритими вагами |
 | Operational evidence | Операційні свідчення |
 | Operator | Оператор |
+| Orchestrator agent | Агент-оркестратор |
 | Output contract | Контракт виходу |
 | Overlap | Перекриття |
 | Pairwise comparison | Парне порівняння |
+| Planning agent actions | Планування дій агента |
 | Ports and adapters | Порти та адаптери |
 | Precision | Точність позитивних передбачень |
 | Precision at k | Точність на k |
@@ -245,6 +255,8 @@
 | Throughput | Пропускна здатність |
 | Token | Токен |
 | Tokenization | Токенізація |
+| Tool | Інструмент |
+| Tool inventory | Перелік доступних інструментів |
 | Top-k retrieval | Пошук верхніх k |
 | Trade-off | Компроміс |
 | Trade-off analysis | Аналіз компромісів |
