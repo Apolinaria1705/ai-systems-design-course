@@ -123,8 +123,8 @@ def _committed_inputs(report_dir: Path, collection: Path, final_commit: str) -> 
         if path.is_symlink():
             raise WorkflowError('Report evidence must not be a symbolic link: ' + str(path))
         relative = path.resolve().relative_to(root.resolve()).as_posix()
-        recorded = subprocess.run(['git', '-C', str(root), 'show', final_commit + ':' + relative], capture_output=True)
-        if recorded.returncode or recorded.stdout != path.read_bytes():
+        from .committed_inputs import matches_committed_file
+        if not matches_committed_file(root, path, final_commit):
             raise WorkflowError('Input is uncommitted or changed after the final commit: ' + relative)
 
 

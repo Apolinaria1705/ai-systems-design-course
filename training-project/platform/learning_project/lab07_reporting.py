@@ -91,8 +91,8 @@ def _committed_inputs(report_dir: Path, final_commit: str) -> None:
         if path in exempt or (path.is_dir() and path != DEFAULT_CORPUS):
             continue
         relative = path.resolve().relative_to(root.resolve()).as_posix()
-        recorded_bytes = subprocess.run(['git', '-C', str(root), 'show', final_commit+':'+relative], capture_output=True)
-        if recorded_bytes.returncode or recorded_bytes.stdout != path.read_bytes():
+        from .committed_inputs import matches_committed_file
+        if not matches_committed_file(root, path, final_commit):
             raise WorkflowError('Input is missing, uncommitted or changed after the final commit: ' + relative)
 
 
