@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
   "lab_id": "lab06",
-  "outcome": "failed",
-  "final_commit": "9abdd45353d0eb7214da98b9b50e1c0f6261ac3b",
+  "outcome": "passed",
+  "final_commit": "aa8b1027c1be5286e3c90c7fd642ed603d51db96",
   "checks": [
     {
       "check_id": "final-commit",
       "status": "passed",
-      "message": "exact final commit 9abdd45353d0eb7214da98b9b50e1c0f6261ac3b is the current branch head"
+      "message": "exact final commit aa8b1027c1be5286e3c90c7fd642ed603d51db96 is the current branch head"
     },
     {
       "check_id": "report-headings",
@@ -26,8 +26,8 @@
     },
     {
       "check_id": "report-completion",
-      "status": "failed",
-      "message": "The report identity section must record the completion state `complete` or `honest-partial`."
+      "status": "passed",
+      "message": "the completion state is recorded"
     },
     {
       "check_id": "report-data-uri",
@@ -46,7 +46,7 @@
     },
     {
       "check_id": "report-prompts",
-      "status": "failed",
+      "status": "passed",
       "message": "replace all fixture prompts and introductory instructions"
     },
     {
@@ -60,7 +60,7 @@
       "message": "existing deterministic checks match the recorded human inputs and decision"
     }
   ],
-  "generated_at": "2026-11-21T13:24:30.149176+00:00",
+  "generated_at": "2026-11-21T13:42:39.655521+00:00",
   "completion_state": "complete",
-  "domain_completion_claimed": false
+  "domain_completion_claimed": true
 }
