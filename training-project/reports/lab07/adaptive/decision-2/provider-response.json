@@ -1,0 +1,5 @@
+{
+  "stdout": "{\"conversation_id\":\"bce9b7ca-0dba-4e2b-b25a-776d315ed771\",\"status\":\"SUCCESS\",\"response\":\"{\\\"operation\\\": \\\"stop\\\", \\\"arguments\\\": {}}\\n\",\"duration_seconds\":2.6731540000000003,\"num_turns\":1,\"usage\":{\"input_tokens\":10945,\"output_tokens\":11,\"thinking_tokens\":0,\"cache_read_tokens\":0,\"total_tokens\":10956}}\n",
+  "stderr": "",
+  "returncode": 0
+}

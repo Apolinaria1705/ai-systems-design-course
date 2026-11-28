@@ -1,0 +1,78 @@
+{
+  "original question": "Explain why a query embedding is needed for embedding-based retrieval in this teaching route.",
+  "latest executed query": "why query embedding is needed for embedding-based retrieval in this teaching route",
+  "retained candidate passages": [
+    {
+      "rank": 1,
+      "score": 6,
+      "retrieval_unit_id": "AP-1",
+      "text": "In this teaching route, understanding embedding-based retrieval requires understanding a query embedding.",
+      "provenance_link": {
+        "source_id": "S-AGENT",
+        "version": "v1",
+        "location": "passage 1"
+      }
+    },
+    {
+      "rank": 2,
+      "score": 3,
+      "retrieval_unit_id": "AP-2",
+      "text": "A query embedding represents the question as a vector for comparison with stored vectors representing retrieval units. Understanding that representation explains how the question can be matched to candidate retrieval units.",
+      "provenance_link": {
+        "source_id": "S-AGENT",
+        "version": "v1",
+        "location": "passage 2"
+      }
+    }
+  ],
+  "generation returns": [
+    {
+      "outcome_type": "generated prerequisite explanation",
+      "claims": [
+        {
+          "text": "In this teaching route, understanding embedding-based retrieval requires understanding a query embedding.",
+          "fragment_ids": [
+            "AP-1"
+          ]
+        },
+        {
+          "text": "A query embedding represents the question as a vector for comparison with stored vectors representing retrieval units.",
+          "fragment_ids": [
+            "AP-2"
+          ]
+        },
+        {
+          "text": "Understanding that representation explains how the question can be matched to candidate retrieval units.",
+          "fragment_ids": [
+            "AP-2"
+          ]
+        }
+      ]
+    }
+  ],
+  "last selected task-progress data": {
+    "generation return": {
+      "outcome_type": "generated prerequisite explanation",
+      "claims": [
+        {
+          "text": "In this teaching route, understanding embedding-based retrieval requires understanding a query embedding.",
+          "fragment_ids": [
+            "AP-1"
+          ]
+        },
+        {
+          "text": "A query embedding represents the question as a vector for comparison with stored vectors representing retrieval units.",
+          "fragment_ids": [
+            "AP-2"
+          ]
+        },
+        {
+          "text": "Understanding that representation explains how the question can be matched to candidate retrieval units.",
+          "fragment_ids": [
+            "AP-2"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "selection record id": "adaptive-read-selection",
+  "retrieval-unit admission criteria": "RUS-05-v1",
+  "context budget characters": 150,
+  "text query": "query embedding vector comparison",
+  "ranked candidate output": [
+    {
+      "rank": 1,
+      "retrieval unit id": "AP-2",
+      "text": "A query embedding represents the question as a vector for comparison with stored vectors representing retrieval units. Understanding that representation explains how the question can be matched to candidate retrieval units.",
+      "text character count": 223,
+      "provenance link": {
+        "record id": "S-AGENT",
+        "version": "v1",
+        "sentences": "passage 2",
+        "resolves to registered source material": true
+      }
+    },
+    {
+      "rank": 2,
+      "retrieval unit id": "AP-1",
+      "text": "In this teaching route, understanding embedding-based retrieval requires understanding a query embedding.",
+      "text character count": 105,
+      "provenance link": {
+        "record id": "S-AGENT",
+        "version": "v1",
+        "sentences": "passage 1",
+        "resolves to registered source material": true
+      }
+    }
+  ],
+  "supplied source evidence": [
+    {
+      "retrieval unit id": "AP-1",
+      "text": "In this teaching route, understanding embedding-based retrieval requires understanding a query embedding.",
+      "text character count": 105,
+      "provenance link": {
+        "record id": "S-AGENT",
+        "version": "v1",
+        "sentences": "passage 1",
+        "resolves to registered source material": true
+      }
+    }
+  ],
+  "exclusions": [
+    {
+      "retrieval unit id": "AP-2",
+      "failed criterion": "context-budget fit",
+      "evaluated criteria": [
+        "provenance-link resolution",
+        "context-budget fit"
+      ],
+      "remaining context budget characters before unit": 150,
+      "text character count": 223
+    }
+  ],
+  "remaining context budget characters": 45,
+  "next operation": "context construction",
+  "authority boundary": "The selection record is not an authorization to change the canonical knowledge collection."
+}

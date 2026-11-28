@@ -1,0 +1,8 @@
+{
+  "requested_model": "diagnostic-injected",
+  "failure": null,
+  "provider_process_seconds": 0.0004820000031031668,
+  "evidence_kind": "injected runner; not live attestation",
+  "timing_boundary": "One transport invocation through completion only.",
+  "consumption": "Full provider envelope preserved; missing usage is unknown, not zero."
+}

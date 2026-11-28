@@ -1,0 +1,41 @@
+{
+  "requested action": {
+    "operation": "retrieval operation",
+    "arguments": {
+      "text query": "query embedding vector comparison",
+      "collection": "S-AGENT/v1"
+    }
+  },
+  "permission": {
+    "allowed": true,
+    "reason": "permitted read-only operation"
+  },
+  "executed input": {
+    "text query": "query embedding vector comparison",
+    "collection": "S-AGENT/v1"
+  },
+  "returned result": [
+    {
+      "rank": 1,
+      "score": 4,
+      "retrieval_unit_id": "AP-2",
+      "text": "A query embedding represents the question as a vector for comparison with stored vectors representing retrieval units. Understanding that representation explains how the question can be matched to candidate retrieval units.",
+      "provenance_link": {
+        "source_id": "S-AGENT",
+        "version": "v1",
+        "location": "passage 2"
+      }
+    },
+    {
+      "rank": 2,
+      "score": 2,
+      "retrieval_unit_id": "AP-1",
+      "text": "In this teaching route, understanding embedding-based retrieval requires understanding a query embedding.",
+      "provenance_link": {
+        "source_id": "S-AGENT",
+        "version": "v1",
+        "location": "passage 1"
+      }
+    }
+  ]
+}

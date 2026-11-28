@@ -1,0 +1,23 @@
+{
+  "outcome_type": "generated prerequisite explanation",
+  "claims": [
+    {
+      "text": "In this teaching route, understanding embedding-based retrieval requires understanding a query embedding.",
+      "fragment_ids": [
+        "AP-1"
+      ]
+    },
+    {
+      "text": "A query embedding represents the question as a vector for comparison with stored vectors representing retrieval units.",
+      "fragment_ids": [
+        "AP-2"
+      ]
+    },
+    {
+      "text": "Understanding that representation explains how the question can be matched to candidate retrieval units.",
+      "fragment_ids": [
+        "AP-2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "requested action": {
+    "operation": "stop",
+    "arguments": {}
+  },
+  "permission": {
+    "allowed": true,
+    "reason": "permitted read-only operation"
+  },
+  "executed input": null,
+  "returned result": null
+}

@@ -1,0 +1,6 @@
+{
+  "stdout": "controlled partial return",
+  "stderr": "",
+  "returncode": null,
+  "error_type": "TimeoutExpired"
+}

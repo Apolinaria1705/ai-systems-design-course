@@ -1,0 +1,12 @@
+{
+  "requested action": {
+    "operation": "canonical write",
+    "arguments": {}
+  },
+  "permission": {
+    "allowed": false,
+    "reason": "outside permitted scope"
+  },
+  "executed input": null,
+  "returned result": null
+}

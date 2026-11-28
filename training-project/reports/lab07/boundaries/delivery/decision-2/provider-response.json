@@ -1,0 +1,5 @@
+{
+  "stdout": "{\"status\": \"SUCCESS\", \"response\": \"{\\\"operation\\\": \\\"stop\\\", \\\"arguments\\\": {}}\"}",
+  "stderr": "",
+  "returncode": 0
+}

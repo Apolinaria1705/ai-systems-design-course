@@ -1,0 +1,14 @@
+{
+  "status": "stop proposed",
+  "failure": null,
+  "requested_model": "diagnostic-injected",
+  "new_provider_invocations": 2,
+  "additional_decisions": 2,
+  "maximum_additional_decisions": 3,
+  "semantic_judgment": "not performed",
+  "task_accomplishment": "not judged",
+  "evidence_kind": "injected runner; not live attestation",
+  "continuation_seconds": 0.03788119996897876,
+  "timing_boundary": "Continuation after capture validation; excludes predecessor execution and human evaluation.",
+  "consumption": "Raw envelopes retained; unavailable usage is unknown, not zero."
+}

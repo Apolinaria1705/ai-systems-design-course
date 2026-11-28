@@ -1,0 +1,12 @@
+{
+  "status": "boundary checks passed",
+  "evidence_kind": "controlled diagnostic; injected transport, not live model behavior",
+  "live_provider_invocations": 0,
+  "permission_denial": "passed",
+  "retained_versus_delivered": "passed",
+  "honest_stop": "passed",
+  "diagnostic_budget_characters": 150,
+  "normal_route_budget_characters": 600,
+  "semantic_judgment": "not performed",
+  "task_accomplishment": "not judged"
+}

@@ -1,0 +1,7 @@
+{
+  "adapter": "agy",
+  "model_id": "gemini-3.8-flash-low",
+  "collection_version": "S-AGENT/v1",
+  "attempts": 1,
+  "acquisition": "prompt-schema; no CLI repair turn"
+}

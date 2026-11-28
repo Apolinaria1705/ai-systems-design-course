@@ -1,0 +1,5 @@
+{
+  "stdout": "{\"status\": \"SUCCESS\", \"response\": \"{\\\"operation\\\": \\\"retrieval operation\\\", \\\"arguments\\\": {\\\"text query\\\": \\\"query embedding vector comparison\\\", \\\"collection\\\": \\\"S-AGENT/v1\\\"}}\"}",
+  "stderr": "",
+  "returncode": 0
+}

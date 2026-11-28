@@ -1,0 +1,12 @@
+{
+  "status": "candidates returned",
+  "failure": null,
+  "adapter": "agy",
+  "requested_model": "gemini-3.8-flash-low",
+  "evidence_kind": "live provider invocation",
+  "provider_process_seconds": 6.632519500039052,
+  "timing_boundary": "One AGY process invocation through completion; excludes later retrieval and evaluation.",
+  "semantic_judgment": "not performed",
+  "next_model_request_count": 0,
+  "consumption": "Full provider envelope preserved; missing usage is unknown, not zero."
+}

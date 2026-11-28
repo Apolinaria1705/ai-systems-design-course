@@ -1,0 +1,5 @@
+{
+  "stdout": "{\"conversation_id\":\"3865757c-aae8-4065-968c-6c058fe45a4a\",\"status\":\"SUCCESS\",\"response\":\"{\\\"operation\\\": \\\"model-backed prerequisite-explanation operation\\\", \\\"arguments\\\": {}}\\n\",\"duration_seconds\":2.3841228,\"num_turns\":1,\"usage\":{\"input_tokens\":10861,\"output_tokens\":17,\"thinking_tokens\":0,\"cache_read_tokens\":0,\"total_tokens\":10878}}\n",
+  "stderr": "",
+  "returncode": 0
+}

@@ -1,0 +1,14 @@
+{
+  "status": "execution failure",
+  "failure": "Provider process did not complete.",
+  "requested_model": "diagnostic-injected",
+  "new_provider_invocations": 1,
+  "additional_decisions": 1,
+  "maximum_additional_decisions": 3,
+  "semantic_judgment": "not performed",
+  "task_accomplishment": "not judged",
+  "evidence_kind": "injected runner; not live attestation",
+  "continuation_seconds": 0.007779999985359609,
+  "timing_boundary": "Continuation after capture validation; excludes predecessor execution and human evaluation.",
+  "consumption": "Raw envelopes retained; unavailable usage is unknown, not zero."
+}

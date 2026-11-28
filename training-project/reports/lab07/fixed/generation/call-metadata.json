@@ -1,0 +1,8 @@
+{
+  "requested_model": "gemini-3.8-flash-low",
+  "failure": null,
+  "provider_process_seconds": 5.437229099974502,
+  "evidence_kind": "live provider invocation",
+  "timing_boundary": "One transport invocation through completion only.",
+  "consumption": "Full provider envelope preserved; missing usage is unknown, not zero."
+}

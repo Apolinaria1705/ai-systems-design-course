@@ -1,0 +1,13 @@
+{
+  "status": "fixed path completed",
+  "failure": null,
+  "requested_model": "gemini-3.8-flash-low",
+  "new_provider_invocations": 1,
+  "additional_decisions": 0,
+  "semantic_judgment": "not performed",
+  "task_accomplishment": "not judged",
+  "evidence_kind": "live fixed continuation from retained first-action capture",
+  "continuation_seconds": 5.456699599977583,
+  "timing_boundary": "Continuation after capture validation; excludes predecessor execution and human evaluation.",
+  "consumption": "Raw envelopes retained; unavailable usage is unknown, not zero."
+}

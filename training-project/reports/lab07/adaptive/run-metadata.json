@@ -1,0 +1,14 @@
+{
+  "status": "stop proposed",
+  "failure": null,
+  "requested_model": "gemini-3.8-flash-low",
+  "new_provider_invocations": 3,
+  "additional_decisions": 2,
+  "maximum_additional_decisions": 3,
+  "semantic_judgment": "not performed",
+  "task_accomplishment": "not judged",
+  "evidence_kind": "live continuation from retained first-action capture",
+  "continuation_seconds": 16.31088390003424,
+  "timing_boundary": "Continuation after capture validation; excludes predecessor execution and human evaluation.",
+  "consumption": "Raw envelopes retained; unavailable usage is unknown, not zero."
+}

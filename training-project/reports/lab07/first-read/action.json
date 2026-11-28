@@ -1,0 +1,7 @@
+{
+  "operation": "retrieval operation",
+  "arguments": {
+    "text query": "why query embedding is needed for embedding-based retrieval in this teaching route",
+    "collection": "S-AGENT/v1"
+  }
+}
